@@ -62,7 +62,8 @@
 
                     // terse - just return raw values
                     var usernameCol = {
-                        title: 'Name',
+                        title: 'Full Name',
+                        titleAlt: 'Name',
                         sortable: 'name',
                         filter: { name: 'select' },
                         filterData: names,
@@ -70,7 +71,7 @@
                         field: 'name'
                     };
                     // alternatively declare some/all column fields as functions
-                    // your functions by the header.html template, you will receive as a
+                    // your functions will receive the scope created for the header.html template as a parameter
                     var ageCol = {
                         title: 'Age',
                         sortable: function(/*paramsScope*/){

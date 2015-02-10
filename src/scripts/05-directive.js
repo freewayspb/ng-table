@@ -141,9 +141,10 @@ app.directive('ngTableDynamic', ['$parse', function ($parse){
                     return el.attr('x-data-' + attr) || el.attr('data-' + attr) || el.attr(attr);
                 };
 
+                // this used in responsive table
                 var titleExpr = getAttrValue('title');
                 if (!titleExpr){
-                    el.attr('data-title-text', '{{$columns[$index].title(this)}}'); // this used in responsive table
+                    el.attr('data-title-text', '{{$columns[$index].titleAlt(this) || $columns[$index].title(this)}}');
                 }
                 var showExpr = el.attr('ng-show');
                 if (!showExpr){
